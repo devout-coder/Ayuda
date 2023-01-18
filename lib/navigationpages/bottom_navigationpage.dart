@@ -12,7 +12,7 @@ class BpNavigation extends StatefulWidget {
 }
 
 class _BpNavigationState extends State<BpNavigation> {
-  int _currentindex = 2;
+  int _currentindex = 0;
   late PageController _pageController;
 
   @override
@@ -39,7 +39,7 @@ class _BpNavigationState extends State<BpNavigation> {
             });
           },
           children: [
-            const HomePage(),
+            const ActivitivesPage(),
             const StatisticsPage(),
             const ChatScreen(),
             Container(
@@ -60,7 +60,8 @@ class _BpNavigationState extends State<BpNavigation> {
         },
         items: <BottomNavyBarItem>[
           BottomNavyBarItem(
-              icon: const Icon(Icons.home_outlined), title: const Text('Home')),
+              icon: const Icon(Icons.local_activity_outlined),
+              title: const Text('Activities')),
           BottomNavyBarItem(
               icon: const Icon(Icons.sentiment_satisfied_outlined),
               title: const Text('Statistics')),

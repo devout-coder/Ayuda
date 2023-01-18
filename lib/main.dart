@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Kicking everyone\'s ass'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -38,8 +39,8 @@ Future registerDB() async {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: FutureBuilder(
+    return Scaffold(
+      body: FutureBuilder(
         future: registerDB(),
         builder: ((context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
@@ -49,7 +50,6 @@ class _MyHomePageState extends State<MyHomePage> {
           }
         }),
       ),
-      debugShowCheckedModeBanner: false,
     );
   }
 }

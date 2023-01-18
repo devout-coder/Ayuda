@@ -32,8 +32,7 @@ class _StatisticsPageState extends State<StatisticsPage> {
               child: BarChart(
                 BarChartData(
                   barGroups: _chartGroups(),
-                  borderData: FlBorderData(
-                      border: Border(bottom: BorderSide(), left: BorderSide())),
+                  borderData: FlBorderData(border: Border()),
                   gridData: FlGridData(
                     show: false,
                   ),

@@ -1,18 +1,61 @@
+import 'package:csi_hackathon/navigationpages/screens/Breathing.dart';
+import 'package:csi_hackathon/navigationpages/screens/Mindfulness.dart';
+import 'package:csi_hackathon/navigationpages/screens/MuscleRelaxation.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class ActivitivesPage extends StatefulWidget {
+  const ActivitivesPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<ActivitivesPage> createState() => _ActivitivesPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _ActivitivesPageState extends State<ActivitivesPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text("HomePage"),
+        child: Column(
+          children: [
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Breathing()),
+                );
+              },
+              child: Text("Breathing"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Mindfulness()),
+                );
+              },
+              child: Text("Mindfulness"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const MuscleRelaxation()),
+                );
+              },
+              child: Text("Muscle Relaxation"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Breathing()),
+                );
+              },
+              child: Text("Breathing"),
+            ),
+          ],
+        ),
       ),
     );
   }

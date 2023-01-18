@@ -15,4 +15,10 @@ class States {
     SentimentDetails("positive"),
     SentimentDetails("negative"),
   ];
+  Map<DateTime, List<String>> activities = {
+    DateTime(2023, 1, 19): ["Mindfulness", "Muscle Relaxation"],
+    DateTime(2023, 1, 19): ["Muscle Relaxation"],
+    DateTime(2023, 1, 19): ["Mindfulness"],
+  };
+  int points = 200;
 }
