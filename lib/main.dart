@@ -1,4 +1,5 @@
 import 'package:csi_hackathon/navigationpages/bottom_navigationpage.dart';
+import 'package:csi_hackathon/states_init.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -30,9 +31,25 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+Future registerDB() async {
+  await GetItRegister().initializeGlobalStates();
+}
+
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: BpNavigation());
+    return MaterialApp(
+      home: FutureBuilder(
+        future: registerDB(),
+        builder: ((context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            return SafeArea(child: BpNavigation());
+          } else {
+            return const Center(child: CircularProgressIndicator());
+          }
+        }),
+      ),
+      debugShowCheckedModeBanner: false,
+    );
   }
 }
