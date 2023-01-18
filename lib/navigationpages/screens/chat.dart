@@ -1,8 +1,11 @@
 import 'dart:convert';
 import 'dart:math';
 
+import 'package:csi_hackathon/navigationpages/screens/statistics.dart';
+import 'package:csi_hackathon/states.dart';
 import 'package:flutter/material.dart';
 import 'package:dart_sentiment/dart_sentiment.dart';
+import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
 
 class ChatScreen extends StatefulWidget {
@@ -19,16 +22,10 @@ class ChatMessage {
 }
 
 List<ChatMessage> messages = [
-  ChatMessage(messageContent: "Hello fucker", messageType: "receiver"),
-  ChatMessage(messageContent: "How have you been?", messageType: "receiver"),
-  ChatMessage(messageContent: "Hello fucker", messageType: "receiver"),
-  ChatMessage(messageContent: "Hello fucker", messageType: "receiver"),
-  ChatMessage(messageContent: "Hello fucker", messageType: "receiver"),
-  ChatMessage(messageContent: "Hello fucker", messageType: "receiver"),
-  ChatMessage(messageContent: "How have you been?", messageType: "receiver"),
-  ChatMessage(messageContent: "How have you been?", messageType: "receiver"),
-  ChatMessage(messageContent: "How have you been?", messageType: "receiver"),
-  ChatMessage(messageContent: "How have you been?", messageType: "receiver"),
+  ChatMessage(
+    messageContent: "Hey, how have you been?",
+    messageType: "receiver",
+  ),
 ];
 
 List<String> positiveResponses = [
@@ -78,6 +75,7 @@ Future<String> anaylzeSentence(String sentence) async {
 class _ChatScreenState extends State<ChatScreen> {
   late TextEditingController _controller;
   ScrollController _mainController = ScrollController();
+  States states = GetIt.I.get();
   @override
   void initState() {
     _controller = TextEditingController();
@@ -188,7 +186,12 @@ class _ChatScreenState extends State<ChatScreen> {
                           ...messages,
                           newMessage
                         ];
-
+                        SentimentDetails sentimentDetails =
+                            SentimentDetails("positive");
+                        states.sentimentDetails = [
+                          ...states.sentimentDetails,
+                          sentimentDetails
+                        ];
                         setState(() {
                           messages = newMessages;
                         });
@@ -201,6 +204,12 @@ class _ChatScreenState extends State<ChatScreen> {
                           ...messages,
                           newMessage
                         ];
+                        SentimentDetails sentimentDetails =
+                            SentimentDetails("negative");
+                        states.sentimentDetails = [
+                          ...states.sentimentDetails,
+                          sentimentDetails
+                        ];
                         setState(() {
                           messages = newMessages;
                         });
@@ -212,6 +221,12 @@ class _ChatScreenState extends State<ChatScreen> {
                         List<ChatMessage> newMessages = [
                           ...messages,
                           newMessage
+                        ];
+                        SentimentDetails sentimentDetails =
+                            SentimentDetails("neutral");
+                        states.sentimentDetails = [
+                          ...states.sentimentDetails,
+                          sentimentDetails
                         ];
                         setState(() {
                           messages = newMessages;
