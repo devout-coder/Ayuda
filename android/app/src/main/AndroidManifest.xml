@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.csi_hackathon">
+<uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="csi_hackathon"
         android:name="${applicationName}"
