@@ -40,15 +40,31 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FutureBuilder(
-        future: registerDB(),
-        builder: ((context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            return SafeArea(child: BpNavigation());
-          } else {
-            return const Center(child: CircularProgressIndicator());
-          }
-        }),
+      // resizeToAvoidBottomInset: false,
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              // Color.fromARGB(255, 216, 216, 216),
+              // Color.fromARGB(255, 215, 215, 255),
+              // Color.fromARGB(255, 196, 196, 255),
+              Color(0xffA88BEB),
+              Color(0xffF8CEEC)
+            ],
+          ),
+        ),
+        child: FutureBuilder(
+          future: registerDB(),
+          builder: ((context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              return SafeArea(child: BpNavigation());
+            } else {
+              return const Center(child: CircularProgressIndicator());
+            }
+          }),
+        ),
       ),
     );
   }

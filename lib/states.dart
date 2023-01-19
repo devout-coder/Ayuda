@@ -1,6 +1,7 @@
 import 'package:csi_hackathon/navigationpages/screens/statistics.dart';
 
 class States {
+  Function? moveToActivity;
   List<String> sentimentDetails = [
     "positive",
     "negative",
@@ -23,6 +24,7 @@ class States {
     "positive",
     "positive",
     "negative",
+    "positive",
   ];
   Map<DateTime, Map<String, int>> activities = {
     DateTime(2023, 1, 16): {"Muscle Relaxation": 500},

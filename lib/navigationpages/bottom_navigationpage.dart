@@ -6,6 +6,7 @@ import 'package:csi_hackathon/states.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:get_it/get_it.dart';
 
 class BpNavigation extends StatefulWidget {
   const BpNavigation({super.key});
@@ -28,9 +29,17 @@ class _BpNavigationState extends State<BpNavigation> {
     )
   ];
   int _activePage = 0;
+  void moveToActivities() {
+    setState(() {
+      _activePage = 0;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
+    States states = GetIt.I.get();
+    states.moveToActivity = moveToActivities;
     _pageController = PageController();
   }
 
@@ -43,14 +52,24 @@ class _BpNavigationState extends State<BpNavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox.expand(
-        child: _tabItems[_activePage],
+      // resizeToAvoidBottomInset: false,
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Color(0xffA88BEB), Color(0xffF8CEEC)],
+          ),
+        ),
+        child: SizedBox.expand(
+          child: _tabItems[_activePage],
+        ),
       ),
       bottomNavigationBar: CurvedNavigationBar(
         // color: Colors.black,
         height: 60,
         color: lighterPurple,
-        backgroundColor: Color(0xffF8CEEC),
+        backgroundColor: _activePage != 3 ? Color(0xffF8CEEC) : Colors.white,
         items: <Widget>[
           Icon(Icons.local_activity_outlined, size: 30),
           Icon(Icons.sentiment_satisfied_outlined, size: 30),
