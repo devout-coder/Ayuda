@@ -1,0 +1,4 @@
+ walk = https://assets1.lottiefiles.com/packages/lf20_9eLZ98.json
+
+ breathing => https://assets6.lottiefiles.com/private_files/lf30_i2pyppik.json
+ 

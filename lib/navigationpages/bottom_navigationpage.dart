@@ -12,7 +12,7 @@ class BpNavigation extends StatefulWidget {
 }
 
 class _BpNavigationState extends State<BpNavigation> {
-  int _currentindex = 2;
+  int _currentindex = 0;
   late PageController _pageController;
 
   @override
