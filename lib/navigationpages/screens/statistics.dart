@@ -40,47 +40,56 @@ class _StatisticsPageState extends State<StatisticsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Text("${states.points} coins"),
-          AspectRatio(
-            aspectRatio: 2.0,
-            child: PieChart(
-              PieChartData(
-                sections: _chartSections(positive!, negative!, neutral!),
-                centerSpaceRadius: 48.0,
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Color(0xffA88BEB), Color(0xffF8CEEC)],
+          ),
+        ),
+        child: Column(
+          children: [
+            Text("${states.points} coins"),
+            AspectRatio(
+              aspectRatio: 2.0,
+              child: PieChart(
+                PieChartData(
+                  sections: _chartSections(positive!, negative!, neutral!),
+                  centerSpaceRadius: 48.0,
+                ),
               ),
             ),
-          ),
-          Text("Glad to know that you are happy!"),
-          Text("4 day streak"),
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: AspectRatio(
-              aspectRatio: 2,
-              child: BarChart(
-                BarChartData(
-                  barGroups: _chartGroups(),
-                  borderData: FlBorderData(border: Border()),
-                  gridData: FlGridData(
-                    show: false,
-                  ),
-                  titlesData: FlTitlesData(
-                    leftTitles: AxisTitles(
-                        sideTitles: SideTitles(
-                      showTitles: false,
-                    )),
-                    bottomTitles: AxisTitles(sideTitles: _bottomTitles),
-                    topTitles:
-                        AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                    rightTitles:
-                        AxisTitles(sideTitles: SideTitles(showTitles: false)),
+            Text("Glad to know that you are happy!"),
+            Text("4 day streak"),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: AspectRatio(
+                aspectRatio: 2,
+                child: BarChart(
+                  BarChartData(
+                    barGroups: _chartGroups(),
+                    borderData: FlBorderData(border: Border()),
+                    gridData: FlGridData(
+                      show: false,
+                    ),
+                    titlesData: FlTitlesData(
+                      leftTitles: AxisTitles(
+                          sideTitles: SideTitles(
+                        showTitles: false,
+                      )),
+                      bottomTitles: AxisTitles(sideTitles: _bottomTitles),
+                      topTitles:
+                          AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                      rightTitles:
+                          AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

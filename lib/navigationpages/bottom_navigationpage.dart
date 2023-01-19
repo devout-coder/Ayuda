@@ -1,6 +1,9 @@
+import 'package:csi_hackathon/colors.dart';
 import 'package:csi_hackathon/navigationpages/screens/chat.dart';
 import 'package:csi_hackathon/navigationpages/screens/Activities.dart';
 import 'package:csi_hackathon/navigationpages/screens/statistics.dart';
+import 'package:csi_hackathon/states.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
@@ -12,9 +15,19 @@ class BpNavigation extends StatefulWidget {
 }
 
 class _BpNavigationState extends State<BpNavigation> {
-  int _currentindex = 0;
   late PageController _pageController;
-
+  final List<Widget> _tabItems = [
+    ActivitivesPage(),
+    StatisticsPage(),
+    ChatScreen(),
+    Container(
+      color: Colors.red,
+    ),
+    Container(
+      color: Colors.yellow,
+    )
+  ];
+  int _activePage = 0;
   @override
   void initState() {
     super.initState();
@@ -31,49 +44,25 @@ class _BpNavigationState extends State<BpNavigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SizedBox.expand(
-        child: PageView(
-          controller: _pageController,
-          onPageChanged: (index) {
-            setState(() {
-              _currentindex = index;
-            });
-          },
-          children: [
-            const ActivitivesPage(),
-            // ExerciseWidget(),
-            const StatisticsPage(),
-            const ChatScreen(),
-            Container(
-              color: Colors.red,
-            ),
-            Container(
-              color: Colors.yellow,
-            ),
-          ],
-        ),
+        child: _tabItems[_activePage],
       ),
-      bottomNavigationBar: BottomNavyBar(
-        selectedIndex: _currentindex,
-        onItemSelected: (index) {
+      bottomNavigationBar: CurvedNavigationBar(
+        // color: Colors.black,
+        height: 60,
+        color: lighterPurple,
+        backgroundColor: Color(0xffF8CEEC),
+        items: <Widget>[
+          Icon(Icons.local_activity_outlined, size: 30),
+          Icon(Icons.sentiment_satisfied_outlined, size: 30),
+          Icon(Icons.chat, size: 30),
+          Icon(Icons.health_and_safety, size: 30),
+          Icon(Icons.settings, size: 30),
+        ],
+        onTap: (index) {
           setState(() {
-            _pageController.jumpToPage(index);
+            _activePage = index;
           });
         },
-        items: <BottomNavyBarItem>[
-          BottomNavyBarItem(
-              icon: const Icon(Icons.local_activity_outlined),
-              title: const Text('Activities')),
-          BottomNavyBarItem(
-              icon: const Icon(Icons.sentiment_satisfied_outlined),
-              title: const Text('Statistics')),
-          BottomNavyBarItem(
-              icon: const Icon(Icons.chat), title: const Text('Chats')),
-          BottomNavyBarItem(
-              icon: const Icon(Icons.health_and_safety),
-              title: const Text('Therapists')),
-          BottomNavyBarItem(
-              icon: const Icon(Icons.settings), title: const Text('Settings')),
-        ],
       ),
     );
   }
