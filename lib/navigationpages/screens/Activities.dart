@@ -1,3 +1,4 @@
+import 'package:csi_hackathon/colors.dart';
 import 'package:csi_hackathon/navigationpages/screens/54321.dart';
 import 'package:csi_hackathon/navigationpages/screens/555.dart';
 import 'package:csi_hackathon/navigationpages/screens/Breathing.dart';
@@ -8,6 +9,98 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+class Cont extends StatefulWidget {
+  String label;
+  Widget widget;
+  String url;
+
+  Cont(
+      {super.key,
+      required this.label,
+      required this.widget,
+      required this.url});
+
+  @override
+  State<Cont> createState() => _ContState();
+}
+
+class _ContState extends State<Cont> {
+  @override
+  Widget build(BuildContext context) {
+    return DelayedDisplay(
+      delay: Duration(seconds: 1),
+      slidingBeginOffset: Offset(0, 0.2),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Scaffold(
+                body: Container(
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        // Color.fromARGB(255, 216, 216, 216),
+                        // Color.fromARGB(255, 215, 215, 255),
+                        // Color.fromARGB(255, 196, 196, 255),
+                        Color(0xffA88BEB),
+                        Color(0xffF8CEEC)
+                      ],
+                    ),
+                  ),
+                  child: widget.widget,
+                ),
+              ),
+            ),
+          );
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: Container(
+            width: 370,
+            height: 100,
+            decoration: BoxDecoration(
+                color: darkPurple,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 3,
+                    blurRadius: 10,
+                    offset: const Offset(0, 3),
+                  )
+                ]),
+            child: Row(children: [
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  alignment: Alignment.center,
+                  child: LottieBuilder.network(
+                    widget.url,
+                    height: 90,
+                    width: 120,
+                  ),
+                ),
+              ),
+              Text(
+                widget.label,
+                style: TextStyle(
+                  fontSize: 22,
+                  color: Color.fromARGB(255, 220, 220, 220),
+                  fontFamily: 'EuclidCircular',
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ]),
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 class ActivitivesPage extends StatefulWidget {
   const ActivitivesPage({super.key});
@@ -20,269 +113,49 @@ class _ActivitivesPageState extends State<ActivitivesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            DelayedDisplay(
-              delay: Duration(seconds: 1),
-              slidingBeginOffset: Offset(0, 0.2),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Breathing()),
-                  );
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Container(
-                    width: 370,
-                    height: 120,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 3,
-                            blurRadius: 10,
-                            offset: const Offset(0, 3),
-                          )
-                        ]),
-                    child: Row(children: [
-                      InkWell(
-                        onTap: () {},
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: LottieBuilder.network(
-                            "https://assets6.lottiefiles.com/private_files/lf30_i2pyppik.json",
-                            height: 90,
-                            width: 120,
-                          ),
-                        ),
-                      ),
-                      Text("Breathing"),
-                    ]),
-                  ),
-                ),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Color(0xffA88BEB), Color(0xffF8CEEC)],
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Cont(
+                  label: "Breathing",
+                  widget: Breathing(),
+                  url:
+                      "https://assets6.lottiefiles.com/private_files/lf30_i2pyppik.json"),
+              Cont(
+                label: "Mindfulness",
+                widget: const Mindfulness(),
+                url:
+                    "https://assets2.lottiefiles.com/private_files/lf30_htijkvxe.json",
               ),
-            ),
-            DelayedDisplay(
-              delay: Duration(seconds: 1),
-              slidingBeginOffset: Offset(0, 0.2),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Mindfulness()),
-                  );
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Container(
-                    width: 370,
-                    height: 120,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 3,
-                            blurRadius: 10,
-                            offset: const Offset(0, 3),
-                          )
-                        ]),
-                    child: Row(children: [
-                      InkWell(
-                        onTap: () {},
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: LottieBuilder.network(
-                            "https://assets2.lottiefiles.com/private_files/lf30_htijkvxe.json",
-                            height: 90,
-                            width: 120,
-                          ),
-                        ),
-                      ),
-                      Text("Mindfulness"),
-                    ]),
-                  ),
-                ),
+              Cont(
+                label: "Muscle Relaxation",
+                widget: const MuscleRelaxation(),
+                url:
+                    "https://assets6.lottiefiles.com/packages/lf20_uk2qyv3i.json",
               ),
-            ),
-            DelayedDisplay(
-              delay: Duration(seconds: 1),
-              slidingBeginOffset: Offset(0, 0.2),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const MuscleRelaxation()),
-                  );
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Container(
-                    width: 370,
-                    height: 120,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 3,
-                            blurRadius: 10,
-                            offset: const Offset(0, 3),
-                          )
-                        ]),
-                    child: Row(children: [
-                      InkWell(
-                        onTap: () {},
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: LottieBuilder.network(
-                            "https://assets5.lottiefiles.com/private_files/lf30_emulvclw.json",
-                            height: 90,
-                            width: 120,
-                          ),
-                        ),
-                      ),
-                      Text("Muscle Relaxation"),
-                    ]),
-                  ),
-                ),
+              Cont(
+                label: "5-4-3-2-1",
+                widget: const Fivefour(),
+                url:
+                    "https://assets5.lottiefiles.com/private_files/lf30_emulvclw.json",
               ),
-            ),
-            DelayedDisplay(
-              delay: Duration(seconds: 1),
-              slidingBeginOffset: Offset(0, 0.2),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Fivefour()),
-                  );
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Container(
-                    width: 370,
-                    height: 120,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 3,
-                            blurRadius: 10,
-                            offset: const Offset(0, 3),
-                          )
-                        ]),
-                    child: Row(children: [
-                      InkWell(
-                        onTap: () {},
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: LottieBuilder.network(
-                            "https://assets6.lottiefiles.com/packages/lf20_uk2qyv3i.json",
-                            height: 90,
-                            width: 120,
-                          ),
-                        ),
-                      ),
-                      Text("5-4-3-2-1"),
-                    ]),
-                  ),
-                ),
+              Cont(
+                label: "5-5-5",
+                widget: FiveFive(),
+                url:
+                    "https://assets4.lottiefiles.com/packages/lf20_8Gr1sc.json",
               ),
-            ),
-            DelayedDisplay(
-              delay: Duration(seconds: 1),
-              slidingBeginOffset: Offset(0, 0.2),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const FiveFive()),
-                  );
-                },
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Container(
-                    width: 370,
-                    height: 100,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 3,
-                            blurRadius: 10,
-                            offset: const Offset(0, 3),
-                          )
-                        ]),
-                    child: Row(children: [
-                      InkWell(
-                        onTap: () {},
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: LottieBuilder.network(
-                            "https://assets4.lottiefiles.com/packages/lf20_8Gr1sc.json",
-                            height: 90,
-                            width: 120,
-                          ),
-                        ),
-                      ),
-                      Text("5-5-5"),
-                    ]),
-                  ),
-                ),
-              ),
-            ),
-            // TextButton(
-            //   onPressed: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(builder: (context) => Mindfulness()),
-            //     );
-            //   },
-            //   child: Text("Mindfulness"),
-            // ),
-            // TextButton(
-            //   onPressed: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //           builder: (context) => const MuscleRelaxation()),
-            //     );
-            //   },
-            //   child: Text("Muscle Relaxation"),
-            // ),
-            // TextButton(
-            //   onPressed: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(builder: (context) => const Fivefour()),
-            //     );
-            //   },
-            //   child: Text("5-4-3-2-1 method"),
-            // ),
-            // TextButton(
-            //   onPressed: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(builder: (context) => const FiveFive()),
-            //     );
-            //   },
-            //   child: Text("5-4-3-2-1 method"),
-            // ),
-          ],
+            ],
+          ),
         ),
       ),
     );
