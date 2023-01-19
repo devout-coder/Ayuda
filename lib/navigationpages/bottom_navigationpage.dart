@@ -1,4 +1,5 @@
 import 'package:csi_hackathon/navigationpages/screens/chat.dart';
+import 'package:csi_hackathon/navigationpages/screens/community.dart';
 import 'package:csi_hackathon/navigationpages/screens/homepage.dart';
 import 'package:csi_hackathon/navigationpages/screens/statistics.dart';
 import 'package:flutter/material.dart';
@@ -45,9 +46,7 @@ class _BpNavigationState extends State<BpNavigation> {
             Container(
               color: Colors.red,
             ),
-            Container(
-              color: Colors.yellow,
-            ),
+            const CommunityScreen(),
           ],
         ),
       ),
@@ -70,7 +69,7 @@ class _BpNavigationState extends State<BpNavigation> {
               icon: const Icon(Icons.health_and_safety),
               title: const Text('Therapists')),
           BottomNavyBarItem(
-              icon: const Icon(Icons.settings), title: const Text('Settings')),
+              icon: const Icon(Icons.settings), title: const Text('Community')),
         ],
       ),
     );
