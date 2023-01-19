@@ -17,10 +17,10 @@ class FillOutlineButton extends StatelessWidget {
     return MaterialButton(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30),
-        side: BorderSide(color: Colors.white),
+        side: const BorderSide(color: Color.fromRGBO(186, 229, 244, 1)),
       ),
       elevation: isFilled ? 2 : 0,
-      color: isFilled ? Colors.white : Colors.transparent,
+      color: Color.fromRGBO(8, 8, 32, 1),
       onPressed: press,
       child: Text(
         text,

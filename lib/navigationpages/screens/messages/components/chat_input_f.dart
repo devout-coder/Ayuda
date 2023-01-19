@@ -10,10 +10,10 @@ class ChatInputField extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: const Color.fromRGBO(186, 229, 244, 1),
         boxShadow: [
           BoxShadow(
-              offset: Offset(0, 4),
+              offset: const Offset(0, 4),
               blurRadius: 32,
               color: Colors.grey.withOpacity(0.08)),
         ],
@@ -21,10 +21,6 @@ class ChatInputField extends StatelessWidget {
       child: SafeArea(
         child: Row(
           children: [
-            const Icon(
-              Icons.mic,
-              color: Colors.green,
-            ),
             const SizedBox(
               width: 10,
             ),
@@ -39,7 +35,7 @@ class ChatInputField extends StatelessWidget {
                   children: const [
                     Icon(
                       Icons.sentiment_satisfied_alt_outlined,
-                      color: Colors.yellow,
+                      color: Color.fromRGBO(8, 8, 38, 1),
                     ),
                     SizedBox(
                       width: 4,
@@ -52,16 +48,12 @@ class ChatInputField extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Icon(
-                      Icons.attach_file,
-                      color: Colors.green,
-                    ),
                     SizedBox(
                       width: 4,
                     ),
                     Icon(
-                      Icons.camera_alt_outlined,
-                      color: Colors.green,
+                      Icons.mic,
+                      color: Color.fromRGBO(8, 8, 38, 1),
                     ),
                   ],
                 ),

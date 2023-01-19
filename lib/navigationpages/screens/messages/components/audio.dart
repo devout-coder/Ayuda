@@ -10,9 +10,9 @@ class AudioMessage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.55,
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         horizontal: 5 * 0.75,
-        vertical: 10 / 2.5,
+        vertical: 10,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
@@ -22,7 +22,8 @@ class AudioMessage extends StatelessWidget {
         children: [
           Icon(
             Icons.play_arrow,
-            color: message!.isSender ? Colors.white : Colors.green,
+            color:
+                message!.isSender ? Colors.white : Color.fromRGBO(8, 8, 8, 1),
           ),
           Expanded(
             child: Padding(

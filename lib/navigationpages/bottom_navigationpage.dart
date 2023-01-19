@@ -1,4 +1,4 @@
-import 'package:csi_hackathon/navigationpages/screens/chat.dart';
+import 'package:csi_hackathon/navigationpages/screens/messages/chat.dart';
 import 'package:csi_hackathon/navigationpages/screens/community.dart';
 import 'package:csi_hackathon/navigationpages/screens/homepage.dart';
 import 'package:csi_hackathon/navigationpages/screens/statistics.dart';

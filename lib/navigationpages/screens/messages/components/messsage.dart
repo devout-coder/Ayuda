@@ -39,7 +39,7 @@ class Message extends StatelessWidget {
               radius: 12,
               backgroundImage: AssetImage("assets/images/user_2.png"),
             ),
-            SizedBox(width: 5),
+            const SizedBox(width: 5),
           ],
           messageContaint(message),
           if (message.isSender) MessageStatusDot(status: message.messageStatus)

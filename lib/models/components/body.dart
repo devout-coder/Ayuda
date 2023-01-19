@@ -14,7 +14,7 @@ class Body extends StatelessWidget {
       children: [
         Container(
           padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-          color: Colors.orange,
+          color: const Color.fromRGBO(186, 229, 244, 1),
           child: Row(
             // ignore: prefer_const_literals_to_create_immutables
             children: [
@@ -40,7 +40,7 @@ class Body extends StatelessWidget {
               press: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => MessagesScreen(),
+                  builder: (context) => const MessagesScreen(),
                 ),
               ),
             ),
