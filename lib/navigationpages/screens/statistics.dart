@@ -190,7 +190,7 @@ List<BarChartGroupData> _chartGroups() {
 SideTitles get _bottomTitles => SideTitles(
       showTitles: true,
       getTitlesWidget: (value, meta) {
-        debugPrint(value.toString());
+        // debugPrint(value.toString());
         String text = '';
         if (value == 1) {
           text = 'Jan 16';

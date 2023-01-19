@@ -39,7 +39,7 @@ class _BreathingState extends State<Breathing> {
                   } else {
                     states.activities[today] = {"Breathing": r};
                   }
-                  debugPrint(states.activities.toString());
+                  // debugPrint(states.activities.toString());
 
                   Navigator.push(
                     context,

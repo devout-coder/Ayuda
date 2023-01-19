@@ -40,6 +40,7 @@ class _BpNavigationState extends State<BpNavigation> {
           },
           children: [
             const ActivitivesPage(),
+            // ExerciseWidget(),
             const StatisticsPage(),
             const ChatScreen(),
             Container(
