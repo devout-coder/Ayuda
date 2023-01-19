@@ -1,9 +1,11 @@
 import 'dart:math';
 
+import 'package:csi_hackathon/colors.dart';
 import 'package:csi_hackathon/states.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:lottie/lottie.dart';
 
 class StatisticsPage extends StatefulWidget {
   const StatisticsPage({super.key});
@@ -50,7 +52,39 @@ class _StatisticsPageState extends State<StatisticsPage> {
         ),
         child: Column(
           children: [
-            Text("${states.points} coins"),
+            SizedBox(
+              height: 10,
+            ),
+            Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                // padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                width: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(25)),
+                  color: darkPurple,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      states.points.toString(),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontFamily: 'EuclidCircular',
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    LottieBuilder.network(
+                      "https://assets7.lottiefiles.com/packages/lf20_knayiqhb.json",
+                      height: 40,
+                      width: 40,
+                    ),
+                  ],
+                ),
+              ),
+            ),
             AspectRatio(
               aspectRatio: 2.0,
               child: PieChart(
@@ -60,29 +94,74 @@ class _StatisticsPageState extends State<StatisticsPage> {
                 ),
               ),
             ),
-            Text("Glad to know that you are happy!"),
-            Text("4 day streak"),
-            Padding(
-              padding: EdgeInsets.all(20),
-              child: AspectRatio(
-                aspectRatio: 2,
-                child: BarChart(
-                  BarChartData(
-                    barGroups: _chartGroups(),
-                    borderData: FlBorderData(border: Border()),
-                    gridData: FlGridData(
-                      show: false,
-                    ),
-                    titlesData: FlTitlesData(
-                      leftTitles: AxisTitles(
-                          sideTitles: SideTitles(
-                        showTitles: false,
-                      )),
-                      bottomTitles: AxisTitles(sideTitles: _bottomTitles),
-                      topTitles:
-                          AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                      rightTitles:
-                          AxisTitles(sideTitles: SideTitles(showTitles: false)),
+            SizedBox(height: 20),
+            Container(
+              width: MediaQuery.of(context).size.width * 0.9,
+              child: Text(
+                "Seems like your mood is positive most of the times. The way to go!",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Color.fromARGB(255, 27, 16, 105),
+                  fontSize: 25,
+                  fontFamily: 'EuclidCircular',
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            Row(
+              children: [
+                LottieBuilder.network(
+                  "https://assets2.lottiefiles.com/packages/lf20_lg6lh7fp.json",
+                  height: 100,
+                  width: 100,
+                ),
+                SizedBox(width: 20),
+                Text("4 day streak",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 7, 1, 54),
+                      fontSize: 27,
+                      fontFamily: 'EuclidCircular',
+                      fontWeight: FontWeight.w600,
+                    )),
+              ],
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width * 0.85,
+              height: 200,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(15)),
+                color: lighterPurple,
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color.fromARGB(219, 137, 98, 227),
+                    Color.fromARGB(145, 249, 159, 189)
+                  ],
+                ),
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(20),
+                child: AspectRatio(
+                  aspectRatio: 2,
+                  child: BarChart(
+                    BarChartData(
+                      barGroups: _chartGroups(),
+                      borderData: FlBorderData(border: Border()),
+                      gridData: FlGridData(
+                        show: false,
+                      ),
+                      titlesData: FlTitlesData(
+                        leftTitles: AxisTitles(
+                            sideTitles: SideTitles(
+                          showTitles: false,
+                        )),
+                        bottomTitles: AxisTitles(sideTitles: _bottomTitles),
+                        topTitles: AxisTitles(
+                            sideTitles: SideTitles(showTitles: false)),
+                        rightTitles: AxisTitles(
+                            sideTitles: SideTitles(showTitles: false)),
+                      ),
                     ),
                   ),
                 ),
@@ -169,31 +248,6 @@ List<BarChartGroupData> _chartGroups() {
     // });
   });
   return list;
-
-  // return states.activities.map((time, activities) {
-  //   Map sentimentMap = {"positive": 1, "negative": -1, "neutral": 0};
-  //   final int y = sentimentMap[point.sentiment];
-
-  //   return BarChartGroupData(
-  //       x: states.sentimentDetails.indexOf(point) + 1,
-  //       barRods: [
-  //         BarChartRodData(
-  //             toY: y.toDouble(),
-  //             gradient: y > 0
-  //                 ? LinearGradient(
-  //                     colors: [Colors.yellow, Colors.orange],
-  //                     begin: Alignment.topCenter,
-  //                     end: Alignment.bottomCenter,
-  //                   )
-  //                 : LinearGradient(
-  //                     colors: [Colors.grey, Colors.blue],
-  //                     begin: Alignment.topCenter,
-  //                     end: Alignment.bottomCenter,
-  //                   )
-  //             // color: y > 0 ? Colors.blue : Colors.red,
-  //             )
-  //       ]);
-  // }).toList();
 }
 
 SideTitles get _bottomTitles => SideTitles(
@@ -218,7 +272,13 @@ SideTitles get _bottomTitles => SideTitles(
         }
         return Padding(
           padding: const EdgeInsets.only(top: 8.0),
-          child: Text(text),
+          child: Text(
+            text,
+            style: TextStyle(
+              fontFamily: 'EuclidCircular',
+              fontWeight: FontWeight.w600,
+            ),
+          ),
         );
       },
     );
