@@ -9,9 +9,9 @@ class CommunityScreen extends StatelessWidget {
     return Scaffold(
       appBar: buildAppBar(),
       body: const Body(),
-      backgroundColor: Color.fromRGBO(186, 229, 244, 1),
+      backgroundColor: const Color.fromRGBO(186, 229, 244, 1),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color.fromRGBO(8, 8, 8, 1),
+        backgroundColor: const Color.fromRGBO(8, 8, 38, 1),
         onPressed: () {},
         child: const Icon(
           Icons.person_add_alt_1,
@@ -23,7 +23,7 @@ class CommunityScreen extends StatelessWidget {
 
   AppBar buildAppBar() {
     return AppBar(
-      backgroundColor: Color.fromRGBO(186, 229, 244, 1),
+      backgroundColor: const Color.fromRGBO(186, 229, 244, 1),
       automaticallyImplyLeading: false,
       elevation: 0.0,
       title: const Text(
@@ -40,10 +40,10 @@ class CommunityScreen extends StatelessWidget {
       ),
       actions: [
         IconButton(
-          color: Color.fromRGBO(
+          color: const Color.fromRGBO(
             8,
             8,
-            8,
+            38,
             1,
           ),
           onPressed: () {},

@@ -22,8 +22,9 @@ class AudioMessage extends StatelessWidget {
         children: [
           Icon(
             Icons.play_arrow,
-            color:
-                message!.isSender ? Colors.white : Color.fromRGBO(8, 8, 8, 1),
+            color: message!.isSender
+                ? Colors.white
+                : const Color.fromRGBO(8, 8, 38, 1),
           ),
           Expanded(
             child: Padding(

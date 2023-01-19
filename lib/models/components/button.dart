@@ -20,7 +20,7 @@ class FillOutlineButton extends StatelessWidget {
         side: const BorderSide(color: Color.fromRGBO(186, 229, 244, 1)),
       ),
       elevation: isFilled ? 2 : 0,
-      color: Color.fromRGBO(8, 8, 32, 1),
+      color: const Color.fromRGBO(8, 8, 38, 1),
       onPressed: press,
       child: Text(
         text,

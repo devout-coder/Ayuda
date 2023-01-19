@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class VideoMessage extends StatelessWidget {
+  const VideoMessage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
