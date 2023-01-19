@@ -315,7 +315,7 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Container(
                     width: 370,
-                    height: 210,
+                    height: 320,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
@@ -456,7 +456,7 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
                                             const Duration(milliseconds: 100),
                                         textStyle:
                                             GoogleFonts.averiaGruesaLibre(
-                                          fontSize: 9,
+                                          fontSize: 12,
                                         )),
                                   ],
                                 ),
@@ -483,7 +483,7 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Container(
                     width: 370,
-                    height: 180,
+                    height: 240,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
@@ -546,7 +546,7 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
                                             const Duration(milliseconds: 100),
                                         textStyle:
                                             GoogleFonts.averiaGruesaLibre(
-                                          fontSize: 11,
+                                          fontSize: 12,
                                         )),
                                   ],
                                 ),
@@ -573,7 +573,7 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Container(
                     width: 370,
-                    height: 200,
+                    height: 240,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
@@ -636,7 +636,7 @@ class _ExerciseWidgetState extends State<ExerciseWidget> {
                                             const Duration(milliseconds: 100),
                                         textStyle:
                                             GoogleFonts.averiaGruesaLibre(
-                                          fontSize: 11,
+                                          fontSize: 12,
                                         )),
                                   ],
                                 ),

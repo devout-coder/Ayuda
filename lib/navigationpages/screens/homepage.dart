@@ -5,6 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -15,6 +17,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    const number = "+9199605 67618";
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Container(
@@ -54,16 +57,19 @@ class _HomePageState extends State<HomePage> {
                         const Spacer(),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: const [
+                          children: [
                             IconButton(
-                              onPressed: null,
-                              icon: Icon(
+                              onPressed: () async {
+                                await FlutterPhoneDirectCaller.callNumber(
+                                    number);
+                              },
+                              icon: const Icon(
                                 Icons.phone,
                                 color: Colors.red,
                                 size: 27,
                               ),
                             ),
-                            IconButton(
+                            const IconButton(
                               onPressed: null,
                               icon: Icon(
                                 Icons.notifications_outlined,
