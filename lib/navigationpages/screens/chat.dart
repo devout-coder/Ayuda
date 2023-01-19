@@ -186,11 +186,9 @@ class _ChatScreenState extends State<ChatScreen> {
                           ...messages,
                           newMessage
                         ];
-                        SentimentDetails sentimentDetails =
-                            SentimentDetails("positive");
                         states.sentimentDetails = [
                           ...states.sentimentDetails,
-                          sentimentDetails
+                          "positive"
                         ];
                         setState(() {
                           messages = newMessages;
@@ -204,11 +202,9 @@ class _ChatScreenState extends State<ChatScreen> {
                           ...messages,
                           newMessage
                         ];
-                        SentimentDetails sentimentDetails =
-                            SentimentDetails("negative");
                         states.sentimentDetails = [
                           ...states.sentimentDetails,
-                          sentimentDetails
+                          "negative"
                         ];
                         setState(() {
                           messages = newMessages;
@@ -222,11 +218,9 @@ class _ChatScreenState extends State<ChatScreen> {
                           ...messages,
                           newMessage
                         ];
-                        SentimentDetails sentimentDetails =
-                            SentimentDetails("neutral");
                         states.sentimentDetails = [
                           ...states.sentimentDetails,
-                          sentimentDetails
+                          "neutral"
                         ];
                         setState(() {
                           messages = newMessages;

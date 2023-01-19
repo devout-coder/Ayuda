@@ -16,7 +16,6 @@ class Breathing extends StatefulWidget {
 class _BreathingState extends State<Breathing> {
   States states = GetIt.I.get();
 
-  List<int> _digits = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -26,24 +25,21 @@ class _BreathingState extends State<Breathing> {
             children: [
               TextButton(
                 onPressed: () {
-                  DateTime today = DateTime(DateTime.now().year,
-                      DateTime.now().month, DateTime.now().day);
-                  if (!states.activities.containsKey(today)) {
-                    states.activities[today] = ["Breathing"];
-                  } else {
-                    states.activities[today] = [
-                      ...states.activities[today]!,
-                      "Breathing"
-                    ];
-                  }
-                  final random = new Random();
-                  var i = random.nextInt(_digits.length);
                   Random rnd;
                   int min = 100;
                   int max = 1000;
                   rnd = new Random();
                   int r = min + rnd.nextInt(max - min);
                   states.points += r;
+
+                  DateTime today = DateTime(DateTime.now().year,
+                      DateTime.now().month, DateTime.now().day);
+                  if (states.activities.containsKey(today)) {
+                    states.activities[today]!["Breathing"] = r;
+                  } else {
+                    states.activities[today] = {"Breathing": r};
+                  }
+                  debugPrint(states.activities.toString());
 
                   Navigator.push(
                     context,

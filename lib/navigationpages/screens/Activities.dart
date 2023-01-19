@@ -1,3 +1,5 @@
+import 'package:csi_hackathon/navigationpages/screens/54321.dart';
+import 'package:csi_hackathon/navigationpages/screens/555.dart';
 import 'package:csi_hackathon/navigationpages/screens/Breathing.dart';
 import 'package:csi_hackathon/navigationpages/screens/Mindfulness.dart';
 import 'package:csi_hackathon/navigationpages/screens/MuscleRelaxation.dart';
@@ -49,10 +51,19 @@ class _ActivitivesPageState extends State<ActivitivesPage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Breathing()),
+                  MaterialPageRoute(builder: (context) => const Fivefour()),
                 );
               },
-              child: Text("Breathing"),
+              child: Text("5-4-3-2-1 method"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const FiveFive()),
+                );
+              },
+              child: Text("5-4-3-2-1 method"),
             ),
           ],
         ),

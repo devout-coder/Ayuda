@@ -1,5 +1,5 @@
 import 'package:csi_hackathon/navigationpages/screens/chat.dart';
-import 'package:csi_hackathon/navigationpages/screens/homepage.dart';
+import 'package:csi_hackathon/navigationpages/screens/Activities.dart';
 import 'package:csi_hackathon/navigationpages/screens/statistics.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
