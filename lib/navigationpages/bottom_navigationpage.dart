@@ -1,6 +1,8 @@
 import 'package:csi_hackathon/navigationpages/screens/chat.dart';
 import 'package:csi_hackathon/navigationpages/screens/homepage.dart';
 import 'package:csi_hackathon/navigationpages/screens/statistics.dart';
+import 'package:csi_hackathon/therapist_pages/therapist_profile.dart';
+import 'package:csi_hackathon/therapist_pages/user_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
@@ -42,9 +44,7 @@ class _BpNavigationState extends State<BpNavigation> {
             const HomePage(),
             const StatisticsPage(),
             const ChatScreen(),
-            Container(
-              color: Colors.red,
-            ),
+            const UserProfile(),
             Container(
               color: Colors.yellow,
             ),

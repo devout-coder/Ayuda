@@ -11,15 +11,21 @@ class TherapistProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text(
+          'About me',
+          style: Styles.headLineStyle1
+              .copyWith(color: Color.fromRGBO(8, 8, 38, 1)),
+        ),
         elevation: 0.0,
-        backgroundColor: Theme.of(context).primaryColor,
+        // backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.teal[50],
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context);
           },
           child: const Icon(
             Icons.arrow_back,
-            color: Colors.white,
+            color: Colors.black,
           ),
         ),
         actions: [
@@ -29,9 +35,12 @@ class TherapistProfile extends StatelessWidget {
             },
             child: const Icon(
               Icons.notifications_rounded,
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
+          SizedBox(
+            width: 10,
+          )
         ],
       ),
       backgroundColor: Colors.teal[50],
@@ -314,28 +323,76 @@ class TherapistProfile extends StatelessWidget {
                 ),
                 const Gap(50),
                 const Text(
-                  'Reviews(241)',
+                  'Education',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
                 ),
                 const Gap(30),
                 Column(
                   children: [
-                    Row(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            image: const DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage(
-                                "assets/pic1.png",
+                    Container(
+                      padding: const EdgeInsets.only(
+                        left: 20,
+                      ),
+                      height: 150,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            height: 70,
+                            width: 70,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              image: const DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage(
+                                  "assets/arizona.png",
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                          Column(
+                            children: [
+                              Container(
+                                margin:
+                                    const EdgeInsets.only(right: 20, top: 35),
+                                child: Text(
+                                  'University of Arizona',
+                                  style: Styles.headLineStyle2,
+                                ),
+                              ),
+                              const Gap(10),
+                              Container(
+                                padding: const EdgeInsets.only(right: 45),
+                                child: Text(
+                                  'Doctor of Philosophy (PHD)',
+                                  style: Styles.headLineStyle4,
+                                ),
+                              ),
+                              const Gap(7),
+                              Container(
+                                padding: const EdgeInsets.only(right: 83),
+                                child: Text(
+                                  'Education Psychology',
+                                  style: Styles.headLineStyle4,
+                                ),
+                              ),
+                              const Gap(10),
+                              Container(
+                                padding: const EdgeInsets.only(right: 85),
+                                child: Text(
+                                  'May 2012 - Dec 2019',
+                                  style: Styles.headLineStyle4
+                                      .copyWith(color: Colors.black),
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
                     )
                   ],
                 ),
