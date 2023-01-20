@@ -2,6 +2,7 @@ import 'package:csi_hackathon/navigationpages/screens/statistics.dart';
 
 class States {
   Function? moveToActivity;
+  String lastMessage = "Yeah";
   List<String> sentimentDetails = [
     "positive",
     "negative",
