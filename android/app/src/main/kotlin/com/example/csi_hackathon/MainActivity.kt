@@ -14,6 +14,8 @@ import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
+import io.flutter.embedding.engine.FlutterEngineCache
+import io.flutter.embedding.engine.dart.DartExecutor
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugins.GeneratedPluginRegistrant
@@ -60,6 +62,15 @@ class MainActivity : FlutterActivity(), TextToSpeech.OnInitListener {
         var methodChannel: MethodChannel? = null
 
         tts = TextToSpeech(this, this)
+
+        var newFlutterEngine: FlutterEngine = FlutterEngine(this);
+//        newFlutterEngine.getNavigationChannel().setInitialRoute("activity");
+        newFlutterEngine.getDartExecutor().executeDartEntrypoint(
+            DartExecutor.DartEntrypoint.createDefault()
+        );
+        FlutterEngineCache
+            .getInstance()
+            .put("engine", newFlutterEngine);
 
         methodChannel = MethodChannel(
             flutterEngine.dartExecutor.binaryMessenger,

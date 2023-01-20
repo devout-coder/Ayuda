@@ -1,7 +1,4 @@
 copy and paste the exercise content in relevant files 
-notification feature
-call
-nudger
 app logo
 presentation
 prepare a pitch

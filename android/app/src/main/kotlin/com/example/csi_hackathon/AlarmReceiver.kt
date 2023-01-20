@@ -20,8 +20,7 @@ class AlarmReceiver : BroadcastReceiver() {
             context,
             0,
             FlutterActivity
-                .withNewEngine()
-                .initialRoute("/")
+                .withCachedEngine("engine")
                 .build(context),
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
