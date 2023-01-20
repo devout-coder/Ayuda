@@ -19,9 +19,13 @@ class ChatCard extends StatelessWidget {
             const EdgeInsets.symmetric(horizontal: 16, vertical: 16 * 0.75),
         child: Row(
           children: [
-            const CircleAvatar(
-              radius: 24,
-              //backgroundImage: AssetImage(chat.image),
+            Stack(
+              children: [
+                CircleAvatar(
+                  radius: 24,
+                  backgroundImage: AssetImage(chat.image),
+                )
+              ],
             ),
             Expanded(
               child: Padding(

@@ -24,7 +24,7 @@ class MessagesScreen extends StatelessWidget {
             width: 4,
           ),
           const CircleAvatar(
-            backgroundImage: AssetImage(""),
+            backgroundImage: AssetImage("assets/mindfullGreen.png"),
           ),
           const SizedBox(width: 16 * 0.75),
           Column(
@@ -38,7 +38,7 @@ class MessagesScreen extends StatelessWidget {
                 children: [
                   const Text(
                     "no.of people active ",
-                    style: TextStyle(fontSize: 7),
+                    style: TextStyle(fontSize: 9),
                   ),
                   Container(
                     height: 14,
