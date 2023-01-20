@@ -78,13 +78,13 @@ class _TherapistsState extends State<Therapists> {
                       borderRadius: BorderRadius.circular(60),
                       image: const DecorationImage(
                         fit: BoxFit.cover,
-                        image: AssetImage('assets/pic1.png'),
+                        image: AssetImage('assets/pic1.jpg'),
                       ),
                     ),
                   ),
                   const Gap(15),
                   Text(
-                    'Dr. Kristina Nguyen',
+                    'Dr. Bharati Patil',
                     style: TextStyle(
                         fontFamily: 'EuclidCircular',
                         fontWeight: FontWeight.w600,
@@ -94,11 +94,6 @@ class _TherapistsState extends State<Therapists> {
                   Text(
                     'Cognitive psychologist',
                     style: Styles.headLineStyle3,
-                  ),
-                  const Gap(7),
-                  Text(
-                    '\$20/h',
-                    style: Styles.headLineStyle1,
                   ),
                   const Gap(50),
                   Row(
@@ -369,14 +364,14 @@ class _TherapistsState extends State<Therapists> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Container(
-                              height: 70,
+                              height: 90,
                               width: 70,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
                                 image: const DecorationImage(
                                   fit: BoxFit.cover,
                                   image: AssetImage(
-                                    "assets/arizona.png",
+                                    "assets/college.png",
                                   ),
                                 ),
                               ),
@@ -385,9 +380,9 @@ class _TherapistsState extends State<Therapists> {
                               children: [
                                 Container(
                                   margin:
-                                      const EdgeInsets.only(right: 20, top: 35),
+                                      const EdgeInsets.only(right: 45, top: 35),
                                   child: Text(
-                                    'University of Arizona',
+                                    'Mithibhai College',
                                     style: Styles.headLineStyle2,
                                   ),
                                 ),
@@ -411,7 +406,7 @@ class _TherapistsState extends State<Therapists> {
                                 Container(
                                   padding: const EdgeInsets.only(right: 85),
                                   child: Text(
-                                    'May 2012 - Dec 2019',
+                                    'May 1998 - Dec 2003',
                                     style: Styles.headLineStyle4
                                         .copyWith(color: Colors.black),
                                   ),

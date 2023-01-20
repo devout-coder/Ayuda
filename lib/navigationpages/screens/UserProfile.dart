@@ -179,13 +179,13 @@ class _UserProfileState extends State<UserProfile> {
                   margin: const EdgeInsets.only(left: 20, right: 20),
                   child: ListView(
                     children: [
-                      demoTopRatedDr("assets/pic1.png", "Dr. Kristina Nguyen",
+                      demoTopRatedDr("assets/pic1.jpg", "Dr. Bharati Patil",
                           "Psychologist ", "-4.3", '1.4km away'),
-                      demoTopRatedDr('assets/pic4.png', 'Dr. Ashton Wheiler',
+                      demoTopRatedDr('assets/pic4.jpg', 'Dr. Madhuri Jaiswal',
                           'Health Coach', '-4.4', '2.3km away'),
-                      demoTopRatedDr("assets/pic3.png", "Dr. Zac Wolff",
+                      demoTopRatedDr("assets/pic3.jpg", "Dr. Varshah Singh",
                           "Psychiatrist   ", "-4.5", '500m away'),
-                      demoTopRatedDr('assets/pic2.png', 'Dr. Zack Stokes',
+                      demoTopRatedDr('assets/pic2.jpg', 'Dr. Milind Barhate',
                           'Health Coach', '-4.2', '5km away'),
                     ],
                   ),
