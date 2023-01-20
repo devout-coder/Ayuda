@@ -236,6 +236,11 @@ class _ChatScreenState extends State<ChatScreen> {
                             ...messages,
                             newMessage
                           ];
+                          if (states.sentimentDetails[
+                                  states.sentimentDetails.length - 1] ==
+                              "negative") {
+                            states.moveToActivity!();
+                          }
                           states.sentimentDetails = [
                             ...states.sentimentDetails,
                             "negative"
