@@ -1,11 +1,12 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:csi_hackathon/colors.dart';
 import 'package:csi_hackathon/navigationpages/screens/Communities.dart';
-import 'package:csi_hackathon/navigationpages/screens/Therapists.dart';
+import 'package:csi_hackathon/navigationpages/screens/doctors/Therapists.dart';
 import 'package:csi_hackathon/navigationpages/screens/UserProfile.dart';
 import 'package:csi_hackathon/navigationpages/screens/chat.dart';
 import 'package:csi_hackathon/navigationpages/screens/Activities.dart';
 import 'package:csi_hackathon/navigationpages/screens/statistics.dart';
+import 'package:csi_hackathon/navigationpages/screens/userProfile01.dart';
 import 'package:csi_hackathon/states.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,7 @@ class _BpNavigationState extends State<BpNavigation> {
     ActivitivesPage(),
     StatisticsPage(),
     CommunityScreen(),
-    UserProfile()
+    UserProfile01()
   ];
   int _activePage = 0;
   void moveToActivities() {
