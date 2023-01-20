@@ -1,8 +1,7 @@
 copy and paste the exercise content in relevant files 
-add community page
-add therapy page
-add login flow
 notification feature
+call
 nudger
 app logo
 presentation
+prepare a pitch

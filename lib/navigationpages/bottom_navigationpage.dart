@@ -1,6 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:csi_hackathon/colors.dart';
 import 'package:csi_hackathon/navigationpages/screens/Communities.dart';
+import 'package:csi_hackathon/navigationpages/screens/Therapists.dart';
+import 'package:csi_hackathon/navigationpages/screens/UserProfile.dart';
 import 'package:csi_hackathon/navigationpages/screens/chat.dart';
 import 'package:csi_hackathon/navigationpages/screens/Activities.dart';
 import 'package:csi_hackathon/navigationpages/screens/statistics.dart';
@@ -26,9 +28,7 @@ class _BpNavigationState extends State<BpNavigation> {
     ActivitivesPage(),
     StatisticsPage(),
     CommunityScreen(),
-    Container(
-      color: Colors.yellow,
-    )
+    UserProfile()
   ];
   int _activePage = 0;
   void moveToActivities() {
@@ -149,17 +149,17 @@ class _BpNavigationState extends State<BpNavigation> {
         bottomNavigationBar: CurvedNavigationBar(
           // color: Colors.black,
           height: 60, color: lighterPurple,
-          backgroundColor: Colors.transparent,
+          backgroundColor: _activePage != 4 ? Colors.transparent : Colors.white,
           items: <Widget>[
-            Icon(Icons.chat, size: 30),
+            Icon(Icons.home, size: 30),
             Icon(
               Icons.local_activity_outlined,
               size: 30,
               // color: Colors.white,
             ),
             Icon(Icons.sentiment_satisfied_outlined, size: 30),
+            Icon(Icons.chat, size: 30),
             Icon(Icons.health_and_safety, size: 30),
-            Icon(Icons.settings, size: 30),
           ],
           onTap: (index) {
             setState(() {

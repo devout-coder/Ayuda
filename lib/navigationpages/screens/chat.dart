@@ -114,7 +114,7 @@ class _ChatScreenState extends State<ChatScreen> {
         child: Stack(
           children: <Widget>[
             Container(
-              height: MediaQuery.of(context).size.height * 0.8,
+              height: MediaQuery.of(context).size.height * 0.7,
               child: SingleChildScrollView(
                 controller: _mainController,
                 child: ListView.builder(

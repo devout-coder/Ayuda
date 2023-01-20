@@ -49,6 +49,8 @@ dependencies:
   animated_text_kit: ^4.2.2
   flutter_tts: ^3.6.3
   animations: ^2.0.7
+  # flutter_phone_direct_caller: ^2.1.1
+  gap: ^2.0.1
   # url_launcher: ^6.1.7
   # flutter_phone_direct_caller: ^2.1.1
   # flutter_chat_ui: ^1.6.6
@@ -72,6 +74,8 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -106,7 +110,7 @@ flutter:
   #       - asset: fonts/Euclid_Circular_Italic.ttf
   #         style: italic
   fonts:
-    - family: EuclidCircular 
+    - family: EuclidCircular
       fonts:
         - asset: fonts/Euclid_Circular_Bold.ttf
           weight: 700
