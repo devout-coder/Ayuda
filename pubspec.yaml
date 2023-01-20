@@ -41,6 +41,10 @@ dependencies:
   http: ^0.13.5
   get_it: ^7.2.0
   fl_chart: ^0.55.2
+  get:
+  gap: ^2.0.0
+  flutter_phone_direct_caller: ^2.1.1
+  url_launcher: ^6.1.7
   # flutter_chat_ui: ^1.6.6
 
 
