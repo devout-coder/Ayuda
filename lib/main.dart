@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
           future: registerDB(),
           builder: ((context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
-              return SafeArea(child: BpNavigation());
+              return BpNavigation();
             } else {
               return const Center(child: CircularProgressIndicator());
             }

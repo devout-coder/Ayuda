@@ -42,49 +42,13 @@ class _StatisticsPageState extends State<StatisticsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [Color(0xffA88BEB), Color(0xffF8CEEC)],
-          ),
-        ),
         child: Column(
           children: [
-            SizedBox(
-              height: 10,
-            ),
-            Align(
-              alignment: Alignment.topRight,
-              child: Container(
-                // padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
-                width: 100,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(25)),
-                  color: darkPurple,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      states.points.toString(),
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontFamily: 'EuclidCircular',
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    LottieBuilder.network(
-                      "https://assets7.lottiefiles.com/packages/lf20_knayiqhb.json",
-                      height: 40,
-                      width: 40,
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            // SizedBox(
+            //   height: 10,
+            // ),
             AspectRatio(
               aspectRatio: 2.0,
               child: PieChart(

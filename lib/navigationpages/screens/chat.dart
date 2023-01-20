@@ -109,20 +109,8 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       // resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.transparent,
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              // Color.fromARGB(255, 216, 216, 216),
-              // Color.fromARGB(255, 215, 215, 255),
-              // Color.fromARGB(255, 196, 196, 255),
-              Color(0xffA88BEB),
-              Color(0xffF8CEEC)
-            ],
-          ),
-        ),
         child: Stack(
           children: <Widget>[
             Container(
@@ -136,7 +124,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   physics: NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
                     return DelayedDisplay(
-                      slidingBeginOffset: Offset(0, 0.2),
+                      slidingBeginOffset: Offset(0.2, 0),
                       child: Container(
                         padding: EdgeInsets.only(
                             left: 14, right: 14, top: 10, bottom: 10),

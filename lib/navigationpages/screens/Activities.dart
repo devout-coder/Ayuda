@@ -63,6 +63,11 @@ class _ContState extends State<Cont> {
             width: 370,
             height: 100,
             decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [darkPurple, Color.fromARGB(255, 255, 132, 220)],
+                ),
                 color: darkPurple,
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
@@ -114,14 +119,15 @@ class _ActivitivesPageState extends State<ActivitivesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.transparent,
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [Color(0xffA88BEB), Color(0xffF8CEEC)],
-          ),
-        ),
+        // decoration: const BoxDecoration(
+        //   gradient: LinearGradient(
+        //     begin: Alignment.topLeft,
+        //     end: Alignment.bottomRight,
+        //     colors: [Color(0xffA88BEB), Color(0xffF8CEEC)],
+        //   ),
+        // ),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
