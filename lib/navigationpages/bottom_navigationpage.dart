@@ -69,7 +69,7 @@ class _BpNavigationState extends State<BpNavigation> {
               icon: const Icon(Icons.health_and_safety),
               title: const Text('Therapists')),
           BottomNavyBarItem(
-              icon: const Icon(Icons.settings), title: const Text('Community')),
+              icon: const Icon(Icons.public), title: const Text('Community')),
         ],
       ),
     );
