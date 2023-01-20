@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:gap/gap.dart';
 
 Color primary = const Color(0xFF42A5F5);
@@ -116,7 +117,10 @@ class _TherapistsState extends State<Therapists> {
                               size: 24.0,
                             ),
                             onPressed: () async {
-                              // FlutterPhoneDirectCaller.callNumber("+11224553567");
+                              // const platform = MethodChannel('alarms');
+                              // platform.invokeMethod("call");
+                              FlutterPhoneDirectCaller.callNumber(
+                                  "+11224553567");
                             },
                           ),
                           const Gap(5),
