@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Kicking everyone\'s ass'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -38,18 +39,33 @@ Future registerDB() async {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: FutureBuilder(
-        future: registerDB(),
-        builder: ((context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            return SafeArea(child: BpNavigation());
-          } else {
-            return const Center(child: CircularProgressIndicator());
-          }
-        }),
+    return Scaffold(
+      // resizeToAvoidBottomInset: false,
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              // Color.fromARGB(255, 216, 216, 216),
+              // Color.fromARGB(255, 215, 215, 255),
+              // Color.fromARGB(255, 196, 196, 255),
+              Color(0xffA88BEB),
+              Color(0xffF8CEEC)
+            ],
+          ),
+        ),
+        child: FutureBuilder(
+          future: registerDB(),
+          builder: ((context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              return BpNavigation();
+            } else {
+              return const Center(child: CircularProgressIndicator());
+            }
+          }),
+        ),
       ),
-      debugShowCheckedModeBanner: false,
     );
   }
 }
