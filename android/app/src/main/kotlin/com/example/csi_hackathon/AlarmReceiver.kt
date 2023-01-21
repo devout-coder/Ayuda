@@ -52,12 +52,20 @@ class AlarmReceiver : BroadcastReceiver() {
         startMain.addCategory(Intent.CATEGORY_HOME)
         startMain.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         context!!.startActivity(startMain)
+        PendingIntent.getActivity(
+            context,
+            0,
+            FlutterActivity
+                .withCachedEngine("engine")
+                .build(context),
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        ).send()
 
-        val notificationManager: NotificationManager =
-            context!!.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        notificationManager.notify(
-            69,
-            buildNotification(context).build()
-        )
+//        val notificationManager: NotificationManager =
+//            context!!.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+//        notificationManager.notify(
+//            69,
+//            buildNotification(context).build()
+//        )
     }
 }
