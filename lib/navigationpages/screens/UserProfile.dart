@@ -1,3 +1,4 @@
+import 'package:csi_hackathon/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -125,7 +126,7 @@ class _UserProfileState extends State<UserProfile> {
                       flex: 1,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Color(0xff107163),
+                          color: mediumPurple,
                           borderRadius: BorderRadius.circular(5),
                         ),
                         child: const Center(
