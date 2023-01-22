@@ -49,7 +49,7 @@ List chatsData = [
     isActive: false,
   ),
   Chat(
-    name: "How Mental",
+    name: "Bliss Seekers",
     lastMessage: "Hello Abdullah! I am...",
     image: "assets/images/user_2.png",
     time: "8m ago",
@@ -57,24 +57,17 @@ List chatsData = [
   ),
   Chat(
     name: "Focus Learners",
-    lastMessage: "Do you have update...",
+    lastMessage: "Do you have any update...",
     image: "assets/images/user_3.png",
     time: "5d ago",
     isActive: false,
   ),
   Chat(
-    name: "no need",
+    name: "WAGMI",
     lastMessage: "You’re welcome :)",
     image: "assets/images/user_4.png",
     time: "5d ago",
     isActive: true,
-  ),
-  Chat(
-    name: "soyouwanttotalkabout",
-    lastMessage: "Thanks",
-    image: "assets/images/user_5.png",
-    time: "6d ago",
-    isActive: false,
   ),
 ];
 

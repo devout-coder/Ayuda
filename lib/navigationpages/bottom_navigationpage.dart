@@ -10,6 +10,7 @@ import 'package:csi_hackathon/states.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:get_it/get_it.dart';
 import 'package:lottie/lottie.dart';
 
@@ -136,7 +137,9 @@ class _BpNavigationState extends State<BpNavigation> {
                 38,
                 1,
               ),
-              onPressed: () {},
+              onPressed: () {
+                FlutterPhoneDirectCaller.callNumber("7947204712");
+              },
               icon: const Icon(Icons.call),
             ),
           ],
