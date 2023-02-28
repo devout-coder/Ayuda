@@ -51,9 +51,11 @@ dependencies:
   animations: ^2.0.7
   flutter_phone_direct_caller: ^2.1.1
   gap: ^2.0.1
-  # url_launcher: ^6.1.7
-  # flutter_phone_direct_caller: ^2.1.1
-  # flutter_chat_ui: ^1.6.6
+  flutter_launcher_icons: ^0.12.0
+flutter_icons:
+  image_path: "assets/1.png"
+  android: true 
+  ios: true 
 dev_dependencies:
   flutter_test:
     sdk: flutter
